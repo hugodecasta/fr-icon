@@ -33,7 +33,7 @@ function icon_comp(i) {
     const icon = span().set_style({ textAlign: 'center' })
     function copy() {
         navigator.clipboard.writeText(
-            config.copy_type == 'name' ? i : 'ICONS.' + i
+            config.copy_type == 'name' ? i : 'ICONS.' + i.replace(/-/g, '_')
         )
     }
     listen_to(() => config.btn_type, () => {
