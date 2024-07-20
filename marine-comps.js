@@ -1,5 +1,4 @@
-import { alink, bodyAdd, br, button, create_elm, div, h1, hr, input, select_options, span } from "../vanille/components.js"
-import { get_list } from "./vanille/components.js"
+import { alink, bodyAdd, br, button, create_elm, div, h1, hr, input, select_options, span, get_list } from "./vanille/components.js"
 
 export function marine_container(...content) {
     return div('fr-container').add(...content)
