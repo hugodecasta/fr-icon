@@ -52,7 +52,7 @@ function icon_comp(i) {
 }
 
 function icons_table(name, icons) {
-    icons = icons.slice(0, 100)
+    icons = icons.slice(0, 49)
     return div().add(
         br().set_style({ marginTop: '30px' }),
         h3(name),
@@ -91,7 +91,7 @@ function null_search() {
     found.clear()
     const rand_icons = Object.values(ICONS)
     rand_icons.sort(() => Math.random() - 0.5)
-    icons_table('Quelques examples...', rand_icons.slice(0, 30)).add2(found)
+    icons_table('Quelques examples...', rand_icons.slice(0, 21)).add2(found)
 }
 
 // --------------------------------------------------------- MAIN
