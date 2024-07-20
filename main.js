@@ -33,7 +33,11 @@ function icon_comp(i) {
     const icon = span().set_style({ textAlign: 'center' })
     function copy() {
         navigator.clipboard.writeText(
-            config.copy_type == 'name' ? i : 'ICONS.' + i.replace(/-/g, '_')
+            {
+                'name': i,
+                'uname': i.replace(/-/g, '_'),
+                'icon': 'ICONS.' + i.replace(/-/g, '_'),
+            }[config.copy_type]
         )
     }
     listen_to(() => config.btn_type, () => {
@@ -120,8 +124,9 @@ div().add2b().fixed().add(
         marine_radio(
             'Copy type',
             {
-                'copy name': 'name',
-                'copy "ICONS..."': "icon"
+                'Full name': 'name',
+                '_ name': 'uname',
+                '"ICONS.<icon_name>"': "icon"
             },
             config.copy_type,
             (type) => config.copy_type = type
